@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jobbklar-no.github.io/sitemap.xml
