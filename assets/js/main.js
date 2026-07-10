@@ -3,7 +3,9 @@
   var menuButton = document.querySelector(".menu-toggle");
   var themeButton = document.querySelector(".theme-toggle");
   var themeLabel = document.querySelector(".theme-label");
-  var key = "jobbklar-theme";
+  var themeKey = "jobbklar-theme";
+  var rateKey = "jobbklar-usd-nok-v1";
+  var usdPriceIncludingVat = 12.5;
 
   function setMenu(open) {
     if (!nav || !menuButton) return;
@@ -17,69 +19,92 @@
     });
 
     nav.addEventListener("click", function (event) {
-      if (event.target && event.target.tagName === "A") {
-        setMenu(false);
-      }
+      if (event.target && event.target.tagName === "A") setMenu(false);
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        setMenu(false);
-      }
+      if (event.key === "Escape") setMenu(false);
     });
   }
 
-  function resolveTheme(choice) {
-    if (choice === "system") {
-      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    }
-    return choice === "dark" ? "dark" : "light";
-  }
-
-  function currentChoice() {
+  function currentTheme() {
     try {
-      return localStorage.getItem(key) || "light";
+      return localStorage.getItem(themeKey) === "dark" ? "dark" : "light";
     } catch (error) {
       return "light";
     }
   }
 
   function applyTheme(choice) {
-    var resolved = resolveTheme(choice);
-    document.documentElement.dataset.theme = resolved;
-    document.documentElement.dataset.themeChoice = choice;
+    var theme = choice === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themeChoice = theme;
     if (themeButton) {
-      themeButton.setAttribute("aria-pressed", String(resolved === "dark"));
-      themeButton.setAttribute("aria-label", "Bytt tema. Aktivt valg: " + (choice === "system" ? "system" : resolved === "dark" ? "mørk" : "lys"));
+      themeButton.setAttribute("aria-pressed", String(theme === "dark"));
+      themeButton.setAttribute("aria-label", theme === "dark" ? "Bytt til lyst tema" : "Bytt til mørkt tema");
     }
-    if (themeLabel) {
-      themeLabel.textContent = "Tema: " + (choice === "system" ? "System" : resolved === "dark" ? "Mørk" : "Lys");
-    }
+    if (themeLabel) themeLabel.textContent = "Tema: " + (theme === "dark" ? "Mørk" : "Lys");
   }
 
   if (themeButton) {
-    applyTheme(currentChoice());
+    applyTheme(currentTheme());
     themeButton.addEventListener("click", function () {
-      var choices = ["light", "dark", "system"];
-      var next = choices[(choices.indexOf(currentChoice()) + 1) % choices.length];
+      var next = currentTheme() === "dark" ? "light" : "dark";
       try {
-        localStorage.setItem(key, next);
+        localStorage.setItem(themeKey, next);
       } catch (error) {}
       applyTheme(next);
     });
   }
 
-  if (window.matchMedia) {
-    var media = window.matchMedia("(prefers-color-scheme: dark)");
-    var listener = function () {
-      if (currentChoice() === "system") {
-        applyTheme("system");
-      }
-    };
-    if (media.addEventListener) {
-      media.addEventListener("change", listener);
-    } else if (media.addListener) {
-      media.addListener(listener);
+  function updatePrice(rate, sourceDate) {
+    if (!Number.isFinite(rate) || rate < 5 || rate > 20) return;
+    var nok = Math.round(usdPriceIncludingVat * rate);
+    var formattedPrice = "ca. " + new Intl.NumberFormat("nb-NO", { maximumFractionDigits: 0 }).format(nok) + " kr";
+    document.querySelectorAll("[data-price-nok]").forEach(function (element) {
+      element.textContent = formattedPrice;
+    });
+
+    if (sourceDate) {
+      var parsedDate = new Date(sourceDate + "T12:00:00");
+      var formattedDate = new Intl.DateTimeFormat("nb-NO", { day: "numeric", month: "long", year: "numeric" }).format(parsedDate);
+      document.querySelectorAll("[data-rate-status]").forEach(function (element) {
+        element.textContent = "Beregnet med siste tilgjengelige USD/NOK-kurs fra " + formattedDate + ". Gumroad eller kortutsteder kan bruke en litt annen kurs.";
+      });
     }
+  }
+
+  function readCachedRate() {
+    try {
+      var cached = JSON.parse(localStorage.getItem(rateKey) || "null");
+      if (cached && Number.isFinite(cached.rate)) return cached;
+    } catch (error) {}
+    return null;
+  }
+
+  var today = new Date().toISOString().slice(0, 10);
+  var cachedRate = readCachedRate();
+  if (cachedRate) updatePrice(cachedRate.rate, cachedRate.sourceDate);
+
+  if (!cachedRate || cachedRate.checkedDate !== today) {
+    fetch("https://api.frankfurter.dev/v2/rate/USD/NOK", { headers: { Accept: "application/json" } })
+      .then(function (response) {
+        if (!response.ok) throw new Error("Kunne ikke hente valutakurs");
+        return response.json();
+      })
+      .then(function (data) {
+        var rate = Number(data.rate);
+        if (!Number.isFinite(rate) || rate < 5 || rate > 20) throw new Error("Ugyldig valutakurs");
+        var entry = { rate: rate, sourceDate: data.date || today, checkedDate: today };
+        try {
+          localStorage.setItem(rateKey, JSON.stringify(entry));
+        } catch (error) {}
+        updatePrice(entry.rate, entry.sourceDate);
+      })
+      .catch(function () {
+        document.querySelectorAll("[data-rate-status]").forEach(function (element) {
+          if (!cachedRate) element.textContent = "NOK-prisen er et estimat. Endelig beløp vises hos Gumroad før betaling.";
+        });
+      });
   }
 })();

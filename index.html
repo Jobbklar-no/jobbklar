@@ -3,24 +3,25 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Jobbklar – CV-maler, søknadsmaler og intervjuhjelp</title>
-      <meta name="description" content="Norsk jobbsøkerpakke med CV-maler, søknadsmaler, intervjuguide, sjekklister og praktiske verktøy for studenter og nyutdannede.">
+      <title>Jobbklar: CV-mal, søknadsmal og intervjuhjelp</title>
+      <meta name="description" content="Få norske CV-maler, søknadsmaler, intervjuguide og jobbsøkerverktøy i én pakke. For studenter, nyutdannede og deg med lite erfaring.">
       <meta name="robots" content="index,follow">
+      <meta name="google-site-verification" content="R1_WUzX7GfYl9SxyUrJ1v8RO_Ur5ujNK93sPufMd3G0">
       <link rel="canonical" href="https://jobbklar-no.github.io/">
       <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/">
       <meta property="og:locale" content="nb_NO">
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Jobbklar">
-      <meta property="og:title" content="Jobbklar – CV-maler, søknadsmaler og intervjuhjelp">
-      <meta property="og:description" content="Norsk jobbsøkerpakke med CV-maler, søknadsmaler, intervjuguide, sjekklister og praktiske verktøy for studenter og nyutdannede.">
+      <meta property="og:title" content="Jobbklar: CV-mal, søknadsmal og intervjuhjelp">
+      <meta property="og:description" content="Få norske CV-maler, søknadsmaler, intervjuguide og jobbsøkerverktøy i én pakke. For studenter, nyutdannede og deg med lite erfaring.">
       <meta property="og:url" content="https://jobbklar-no.github.io/">
       <meta property="og:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Jobbklar produktpakke med CV-maler, søknadsmaler og intervjuguide">
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="Jobbklar – CV-maler, søknadsmaler og intervjuhjelp">
-      <meta name="twitter:description" content="Norsk jobbsøkerpakke med CV-maler, søknadsmaler, intervjuguide, sjekklister og praktiske verktøy for studenter og nyutdannede.">
+      <meta name="twitter:title" content="Jobbklar: CV-mal, søknadsmal og intervjuhjelp">
+      <meta name="twitter:description" content="Få norske CV-maler, søknadsmaler, intervjuguide og jobbsøkerverktøy i én pakke. For studenter, nyutdannede og deg med lite erfaring.">
       <meta name="twitter:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
       <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
       <meta name="theme-color" content="#17283D" media="(prefers-color-scheme: dark)">
@@ -31,11 +32,8 @@
           try {
             choice = localStorage.getItem(key) || "light";
           } catch (error) {}
-          var resolved = choice;
-          if (choice === "system") {
-            resolved = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          }
-          document.documentElement.dataset.theme = resolved === "dark" ? "dark" : "light";
+          choice = choice === "dark" ? "dark" : "light";
+          document.documentElement.dataset.theme = choice;
           document.documentElement.dataset.themeChoice = choice;
           document.documentElement.classList.add("js");
         })();
@@ -46,7 +44,7 @@
       <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
       <link rel="manifest" href="site.webmanifest">
       <script defer src="assets/js/main.js"></script>
-      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Jobbklar","url":"https://jobbklar-no.github.io/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"Product","name":"Jobbklar – CV, søknad og intervju for norske jobbsøkere","description":"Digital produktpakke med norske guider, eksempler, redigerbare maler, sjekklister og verktøy for CV, jobbsøknad, intervju, e-post og oppfølging.","image":"https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg","url":"https://jobbklar-no.github.io/","brand":{"@type":"Brand","name":"Jobbklar"},"category":"Digital jobbsøkerpakke"}]</script>
+      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Jobbklar","url":"https://jobbklar-no.github.io/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"Product","@id":"https://jobbklar-no.github.io/#product","name":"Jobbklar – CV, søknad og intervju for norske jobbsøkere","description":"Digital produktpakke med norske guider, eksempler, redigerbare maler, sjekklister og verktøy for CV, jobbsøknad, intervju, e-post og oppfølging.","image":"https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg","url":"https://jobbklar-no.github.io/","brand":{"@type":"Brand","name":"Jobbklar"},"category":"Digital jobbsøkerpakke","offers":{"@type":"Offer","url":"https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=structured_data","price":"12.50","priceCurrency":"USD","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}]</script>
     </head>
     <body id="top" class="site-body home">
       <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
@@ -62,7 +60,7 @@
           </button>
           <nav id="site-nav" class="site-nav" aria-label="Hovedmeny">
             <a href="./#innhold">Dette får du</a>
-            <a href="./#slik-fungerer-det">Slik fungerer det</a>
+            <a href="./#pris">Pris</a>
             <a href="ressurser/">Ressurser</a>
             <a href="./#faq">Vanlige spørsmål</a>
           </nav>
@@ -70,7 +68,7 @@
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-label">Tema: Lys</span>
           </button>
-          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Se pris</a>
+          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp – <span data-price-nok>ca. 122 kr</span></a>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -80,19 +78,25 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Digital produktpakke for norske jobbsøkere</p>
-          <h1>Jobbklar – CV, søknad og intervju for norske jobbsøkere</h1>
-          <p class="lead">Samle jobbsøkingen på ett sted med norske guider, konkrete eksempler, redigerbare maler, sjekklister og praktiske verktøy for hele prosessen fra første CV-utkast til oppfølging etter intervju.</p>
+          <h1>Jobbklar: CV, søknad og intervju</h1>
+          <p class="lead">Få norske guider, konkrete eksempler, redigerbare maler og sjekklister for hele jobbsøkingen – fra første CV-utkast til oppfølging etter intervju.</p>
           <ul class="benefit-list">
             <li>Redigerbare CV- og søknadsmaler</li>
             <li>Konkrete norske eksempler</li>
             <li>Intervjuguide og arbeidsark</li>
             <li>Sjekklister og jobbsøkerlogg</li>
           </ul>
+          <div class="price-panel" aria-label="Pris for Jobbklar">
+            <p class="price-label">Engangskjøp</p>
+            <p class="price-main"><strong data-price-nok aria-live="polite">ca. 122 kr</strong> <span>inkl. 25 % mva</span></p>
+            <p class="price-value">Omtrent det samme som en enkel middag – for en pakke du kan bruke gjennom hele jobbsøkingen.</p>
+            <p class="price-note">Beregnet fra USD 12,50. NOK-beløpet oppdateres daglig etter siste tilgjengelige valutakurs. Endelig beløp vises hos Gumroad.</p>
+          </div>
           <div class="hero-actions">
-            <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=hero">Se pris og kjøp Jobbklar</a>
+            <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=hero">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
             <a class="button button-secondary" href="#innhold">Se hva pakken inneholder</a>
           </div>
-          <p class="microcopy">Digital levering via Gumroad. PDF, Word, Excel og tekstfiler.</p>
+          <p class="microcopy">Ingen abonnement. Digital levering via Gumroad i PDF, Word, Excel og tekstfiler.</p>
         </div>
         <figure class="hero-media">
           <picture>
@@ -106,6 +110,7 @@
     <section class="trust-strip" aria-label="Kort om Jobbklar">
       <div class="container trust-grid">
         <span>26 produktfiler</span>
+        <span>Én betaling</span>
         <span>Norsk bokmål</span>
         <span>Redigerbare maler</span>
         <span>Digital levering</span>
@@ -159,8 +164,8 @@
           <ol><li>00_Startguide_les_meg_foerst.pdf</li><li>00_Hurtigplan_7_dager_til_jobbsoknad.pdf</li><li>01_CV-guide_for_norske_jobbsokere.pdf</li><li>01_CV-eksempler_med_forklaring.pdf</li><li>02_CV-mal_enkel_og_ryddig.docx</li><li>02_CV-mal_for_nyutdannet.docx</li><li>02_CV-mal_for_student_og_deltidsjobb.docx</li><li>02_CV-mal_uten_mye_erfaring.docx</li><li>03_Soknadsguide_for_norske_jobber.pdf</li><li>03_Slik_tilpasser_du_soknaden_til_stillingsannonsen.pdf</li><li>04_Soknadsmal_apen_soknad.docx</li><li>04_Soknadsmal_deltidsjobb.docx</li><li>04_Soknadsmal_forste_fulltidsjobb.docx</li><li>04_Soknadsmal_internship_trainee_junior.docx</li><li>05_ChatGPT-prompts_for_CV_soknad_og_intervju.pdf</li><li>05_Promptbank_kopier_og_lim_inn.txt</li><li>06_Intervjuguide_for_norske_jobbsokere.pdf</li><li>06_Intervjusvar_med_eksempler.pdf</li><li>06_Intervju_arbeidsark.docx</li><li>07_E-postmaler_for_jobbsoking.pdf</li><li>07_E-postmaler_kopier_og_tilpass.docx</li><li>08_CV-sjekkliste_for_sending.pdf</li><li>08_Soknadssjekkliste_for_sending.pdf</li><li>08_Intervjusjekkliste.pdf</li><li>08_Jobbsokerlogg.xlsx</li><li>09_Bonus_erfaringsoversetteren.pdf</li></ol>
         </details>
         <div class="section-cta">
-          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=contents">Kjøp Jobbklar på Gumroad</a>
-          <p>Se pris, betalingsvalg og levering direkte hos Gumroad.</p>
+          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=contents">Få alle 26 filene – <span data-price-nok>ca. 122 kr</span></a>
+          <p>Engangskjøp, estimert pris inkl. mva og digital levering via Gumroad.</p>
         </div>
       </div>
     </section>
@@ -200,7 +205,7 @@
           <li><span>Følg opp med riktige e-postmaler.</span></li>
         </ol>
         <div class="section-cta">
-          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=workflow">Se pris og kjøp Jobbklar</a>
+          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=workflow">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
           <p>Alle filene leveres digitalt etter kjøp.</p>
         </div>
       </div>
@@ -240,6 +245,34 @@
       </div>
     </section>
 
+    <section class="section price-section" id="pris">
+      <div class="container price-layout">
+        <div>
+          <p class="eyebrow">Pris og verdi</p>
+          <h2>Én liten investering i en mer ryddig jobbsøking</h2>
+          <p>For omtrent prisen av en enkel middag får du 26 norske produktfiler som hjelper deg med CV, jobbsøknad, jobbintervju, e-post og oppfølging.</p>
+          <ul class="check-list">
+            <li>Ingen abonnement eller løpende betaling.</li>
+            <li>Redigerbare CV-maler og søknadsmaler følger med.</li>
+            <li>Guider, eksempler og sjekklister kan brukes flere ganger.</li>
+            <li>Digital tilgang etter gjennomført kjøp hos Gumroad.</li>
+          </ul>
+        </div>
+        <aside class="price-card" aria-label="Prisoversikt">
+          <p class="price-label">Jobbklar komplett pakke</p>
+          <p class="price-card-total" data-price-nok aria-live="polite">ca. 122 kr</p>
+          <p>inkl. 25 % mva</p>
+          <dl>
+            <div><dt>Produkt</dt><dd>USD 10,00</dd></div>
+            <div><dt>Mva (25 %)</dt><dd>USD 2,50</dd></div>
+            <div><dt>Totalt</dt><dd>USD 12,50</dd></div>
+          </dl>
+          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=price_section">Kjøp Jobbklar på Gumroad</a>
+          <p class="price-note" data-rate-status>Siste tilgjengelige USD/NOK-kurs brukes. Kortutsteder kan bruke en litt annen kurs.</p>
+        </aside>
+      </div>
+    </section>
+
     <section class="section section-alt" id="faq">
       <div class="container narrow">
         <div class="section-heading">
@@ -252,6 +285,7 @@
           <details><summary>Kan malene redigeres?</summary><p>Ja. CV-maler, søknadsmaler, e-postmaler og intervjuarbeidsark leveres som redigerbare Word-filer der det passer.</p></details>
           <details><summary>Fungerer Word-filene i Google Docs?</summary><p>De fungerer vanligvis i Google Docs, men enkelte sideskift eller skrifter kan se litt annerledes ut mellom programmer.</p></details>
           <details><summary>Hvordan mottar jeg produktet?</summary><p>Kjøp og digital levering håndteres av Gumroad. Etter kjøp får du tilgang til nedlastingen via Gumroad.</p></details>
+          <details><summary>Hva koster Jobbklar i norske kroner?</summary><p>Prisen er USD 10,00 pluss 25 % mva, totalt USD 12,50. Nettsiden regner dette om til en estimert norsk pris hver dag. Endelig NOK-beløp kan avvike litt fordi Gumroad eller kortutstederen kan bruke en annen valutakurs.</p></details>
           <details><summary>Er dette et abonnement?</summary><p>Nei. Jobbklar er en digital produktpakke, ikke et abonnement.</p></details>
           <details><summary>Må jeg bruke alle filene?</summary><p>Nei. Du kan starte med CV, søknad eller intervju, og bruke resten når det blir relevant.</p></details>
           <details><summary>Kan ChatGPT skrive hele søknaden for meg?</summary><p>Du bør ikke sende ukritisk AI-tekst. Bruk heller ChatGPT til struktur, forslag og forbedring, og kontroller at teksten stemmer med din faktiske erfaring.</p></details>
@@ -266,9 +300,10 @@
       <div class="container final-cta-inner">
         <p class="eyebrow">Klar til å rydde jobbsøkingen?</p>
         <h2>Gjør jobbsøkingen mer ryddig med Jobbklar</h2>
-        <p>Få norske guider, redigerbare maler, sjekklister, intervjuhjelp og jobbsøkerlogg samlet i én digital produktpakke.</p>
-        <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=final">Se pris og kjøp på Gumroad</a>
-        <p class="microcopy">Digital levering etter kjøp.</p>
+        <p>Få norske CV-maler, søknadsmaler, sjekklister, intervjuhjelp og jobbsøkerlogg samlet i én digital produktpakke.</p>
+        <p class="final-price"><span data-price-nok>ca. 122 kr</span> inkl. mva</p>
+        <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=final">Kjøp Jobbklar på Gumroad</a>
+        <p class="microcopy">Engangskjøp. Digital levering etter betaling.</p>
       </div>
     </section>
 
@@ -293,11 +328,11 @@
           </nav>
           <div>
             <p class="footer-heading">Kjøp</p>
-            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Se produktet på Gumroad</a>
-            <p class="fineprint">Kjøp, betaling og digital levering håndteres av Gumroad.</p>
+            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+            <p class="fineprint">Estimert norsk pris inkl. 25 % mva. Kjøp, betaling og digital levering håndteres av Gumroad.</p>
           </div>
         </div>
       </footer>
-      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Se pris og kjøp Jobbklar</a>
+      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
     </body>
     </html>

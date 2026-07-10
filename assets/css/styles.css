@@ -263,8 +263,14 @@ button {
   box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--color-surface) 70%, transparent);
 }
 
+[data-theme="dark"] .theme-dot {
+  background: #F5F2EA;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #F5F2EA 24%, transparent);
+}
+
 .hero {
-  padding-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3.25rem;
 }
 
 .hero-grid {
@@ -346,6 +352,52 @@ h3 {
 .fineprint {
   color: var(--color-muted);
   font-size: 0.94rem;
+}
+
+.price-panel {
+  margin-top: 1.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-line);
+  border-left: 5px solid var(--color-tip-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.price-label {
+  margin-bottom: 0.2rem;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.price-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.price-main strong {
+  color: var(--color-blue);
+  font-size: 1.65rem;
+  line-height: 1.1;
+}
+
+[data-theme="dark"] .price-main strong {
+  color: #DDECF9;
+}
+
+.price-value {
+  margin-bottom: 0.35rem;
+  font-weight: 720;
+}
+
+.price-note {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
 }
 
 .hero-media {
@@ -557,6 +609,72 @@ h3 {
   border-color: #fff;
 }
 
+.final-price {
+  margin-bottom: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 820;
+}
+
+.price-section {
+  background: var(--color-tip-bg);
+}
+
+.price-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 3rem;
+  align-items: center;
+}
+
+.price-card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-top: 5px solid var(--color-tip-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.price-card-total {
+  margin-bottom: 0;
+  color: var(--color-blue);
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+[data-theme="dark"] .price-card-total {
+  color: #DDECF9;
+}
+
+.price-card dl {
+  margin-block: 1.25rem;
+  border-block: 1px solid var(--color-line);
+  padding-block: 0.65rem;
+}
+
+.price-card dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.3rem;
+}
+
+.price-card dt {
+  color: var(--color-muted);
+}
+
+.price-card dd {
+  margin: 0;
+  font-weight: 750;
+}
+
+.price-card .button {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
 .final-cta-inner {
   max-width: 780px;
 }
@@ -656,7 +774,8 @@ h3 {
 
   .hero-grid,
   .compare-layout,
-  .two-column {
+  .two-column,
+  .price-layout {
     grid-template-columns: 1fr;
   }
 
@@ -667,6 +786,46 @@ h3 {
 
   .workflow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    padding: 0.5rem 0 0.9rem;
+  }
+
+  .js .site-nav {
+    display: none;
+  }
+
+  .js .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    padding: 0.65rem 0.8rem;
+    background: var(--color-surface);
+  }
+
+  .header-cta {
+    display: none;
   }
 }
 
@@ -740,7 +899,8 @@ h3 {
   }
 
   .hero {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
   }
 
   .hero-grid {

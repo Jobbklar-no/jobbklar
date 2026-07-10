@@ -6,6 +6,7 @@
       <title>Søknadsmal deltidsjobb – enkel struktur og eksempel</title>
       <meta name="description" content="Skriv en konkret søknad til deltidsjobb, sommerjobb eller butikkjobb med en enkel norsk struktur.">
       <meta name="robots" content="index,follow">
+      <meta name="google-site-verification" content="R1_WUzX7GfYl9SxyUrJ1v8RO_Ur5ujNK93sPufMd3G0">
       <link rel="canonical" href="https://jobbklar-no.github.io/soknadsmal-deltidsjobb/">
       <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/soknadsmal-deltidsjobb/">
       <meta property="og:locale" content="nb_NO">
@@ -31,11 +32,8 @@
           try {
             choice = localStorage.getItem(key) || "light";
           } catch (error) {}
-          var resolved = choice;
-          if (choice === "system") {
-            resolved = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          }
-          document.documentElement.dataset.theme = resolved === "dark" ? "dark" : "light";
+          choice = choice === "dark" ? "dark" : "light";
+          document.documentElement.dataset.theme = choice;
           document.documentElement.dataset.themeChoice = choice;
           document.documentElement.classList.add("js");
         })();
@@ -62,7 +60,7 @@
           </button>
           <nav id="site-nav" class="site-nav" aria-label="Hovedmeny">
             <a href="../#innhold">Dette får du</a>
-            <a href="../#slik-fungerer-det">Slik fungerer det</a>
+            <a href="../#pris">Pris</a>
             <a href="../ressurser/">Ressurser</a>
             <a href="../#faq">Vanlige spørsmål</a>
           </nav>
@@ -70,7 +68,7 @@
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-label">Tema: Lys</span>
           </button>
-          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Se pris</a>
+          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp – <span data-price-nok>ca. 122 kr</span></a>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -115,7 +113,7 @@
         <div class="article-cta">
           <h2>Vil du ha maler og sjekklister samlet?</h2>
           <p>Jobbklar samler CV-maler, søknadsmaler, intervjuguide, promptbank, sjekklister og jobbsøkerlogg i én digital produktpakke.</p>
-          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=resource_application">Se pris og kjøp Jobbklar</a>
+          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=resource_application">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
         </div>
       </div>
     </article>
@@ -141,11 +139,11 @@
           </nav>
           <div>
             <p class="footer-heading">Kjøp</p>
-            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Se produktet på Gumroad</a>
-            <p class="fineprint">Kjøp, betaling og digital levering håndteres av Gumroad.</p>
+            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+            <p class="fineprint">Estimert norsk pris inkl. 25 % mva. Kjøp, betaling og digital levering håndteres av Gumroad.</p>
           </div>
         </div>
       </footer>
-      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Se pris og kjøp Jobbklar</a>
+      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
     </body>
     </html>

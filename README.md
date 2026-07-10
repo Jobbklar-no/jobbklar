@@ -28,8 +28,8 @@ Kontroller etterpå `canonical`, `robots.txt`, `sitemap.xml` og Open Graph-URL-e
 ## Google Search Console
 
 1. Legg til den offentlige URL-en som en property.
-2. Bruk verifiseringsmetoden du velger i Search Console.
-3. Legg ikke inn en verifiseringskode i HTML før koden faktisk er utstedt.
+2. Verifiseringssiden er klargjort med meta-koden som er utstedt for Jobbklar.
+3. Fullfør verifiseringen i Search Console etter at nettstedet er publisert.
 4. Send inn sitemap: `https://jobbklar-no.github.io/sitemap.xml`.
 5. Bruk URL Inspection på forsiden og de viktigste ressursartiklene etter lansering.
 
@@ -44,7 +44,9 @@ Bing Webmaster Tools kan settes opp på samme måte etter lansering.
 
 ## Pris og CTA
 
-Nettsiden viser ikke fast pris, fordi pris og valuta håndteres på Gumroad. CTA-teksten bruker derfor «Se pris og kjøp». Hvis en fast pris senere skal vises på nettsiden, oppdater synlig tekst, Product JSON-LD og README samtidig. Legg bare inn `Offer` i strukturert data når pris, valuta og tilgjengelighet er bekreftet.
+Produktet koster USD 10,00 pluss 25 % mva, totalt USD 12,50 for norske kunder. Nettsiden henter siste tilgjengelige USD/NOK-kurs fra Frankfurter API og oppdaterer den synlige NOK-prisen maksimalt én gang per dag. Den innebygde reserveprisen brukes dersom kurskilden ikke er tilgjengelig. Gumroad eller kortutsteder kan bruke en litt annen kurs, så synlig NOK-pris beskrives alltid som et estimat.
+
+Product JSON-LD bruker den bekreftede totalprisen USD 12,50 og peker til Gumroad. Dersom Gumroad-prisen endres, må `PRICE_USD_EX_VAT`, `PRICE_USD_INC_VAT`, synlig prisforklaring og strukturert data oppdateres samtidig.
 
 ## Bilder
 
