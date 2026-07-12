@@ -4,6 +4,7 @@
   "description": "Digital produktpakke for norske jobbsøkere.",
   "lang": "nb-NO",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#FAF8F3",
   "theme_color": "#1E3A5F",

@@ -7,22 +7,23 @@
       <meta name="description" content="Enkel forklaring av vilkår for personlig bruk, digital levering via Gumroad og ansvar ved bruk av Jobbklar.">
       <meta name="robots" content="index,follow">
       <meta name="google-site-verification" content="R1_WUzX7GfYl9SxyUrJ1v8RO_Ur5ujNK93sPufMd3G0">
-      <link rel="canonical" href="https://jobbklar-no.github.io/vilkar/">
-      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/vilkar/">
+      <link rel="canonical" href="https://jobbklar-no.github.io/jobbklar/vilkar/">
+      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/jobbklar/vilkar/">
       <meta property="og:locale" content="nb_NO">
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Jobbklar">
       <meta property="og:title" content="Vilkår – Jobbklar digital produktpakke">
       <meta property="og:description" content="Enkel forklaring av vilkår for personlig bruk, digital levering via Gumroad og ansvar ved bruk av Jobbklar.">
-      <meta property="og:url" content="https://jobbklar-no.github.io/vilkar/">
-      <meta property="og:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta property="og:url" content="https://jobbklar-no.github.io/jobbklar/vilkar/">
+      <meta property="og:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Jobbklar produktpakke med CV-maler, søknadsmaler og intervjuguide">
+
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="Vilkår – Jobbklar digital produktpakke">
       <meta name="twitter:description" content="Enkel forklaring av vilkår for personlig bruk, digital levering via Gumroad og ansvar ved bruk av Jobbklar.">
-      <meta name="twitter:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta name="twitter:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
       <meta name="theme-color" content="#17283D" media="(prefers-color-scheme: dark)">
       <script>
@@ -30,7 +31,8 @@
           var key = "jobbklar-theme";
           var choice = "light";
           try {
-            choice = localStorage.getItem(key) || "light";
+            choice = localStorage.getItem(key) ||
+              (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
           } catch (error) {}
           choice = choice === "dark" ? "dark" : "light";
           document.documentElement.dataset.theme = choice;
@@ -38,13 +40,13 @@
           document.documentElement.classList.add("js");
         })();
       </script>
-      <link rel="preload" href="../assets/img/jobbklar-cover.webp" as="image" type="image/webp" fetchpriority="high">
+
       <link rel="stylesheet" href="../assets/css/styles.css">
       <link rel="icon" href="../favicon.svg" type="image/svg+xml">
       <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
       <link rel="manifest" href="../site.webmanifest">
       <script defer src="../assets/js/main.js"></script>
-      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Vilkår – Jobbklar digital produktpakke","description":"Enkel forklaring av vilkår for personlig bruk, digital levering via Gumroad og ansvar ved bruk av Jobbklar.","url":"https://jobbklar-no.github.io/vilkar/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/"},{"@type":"ListItem","position":2,"name":"Vilkår","item":"https://jobbklar-no.github.io/vilkar/"}]}]</script>
+      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Vilkår – Jobbklar digital produktpakke","description":"Enkel forklaring av vilkår for personlig bruk, digital levering via Gumroad og ansvar ved bruk av Jobbklar.","url":"https://jobbklar-no.github.io/jobbklar/vilkar/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/jobbklar/"},{"@type":"ListItem","position":2,"name":"Vilkår","item":"https://jobbklar-no.github.io/jobbklar/vilkar/"}]}]</script>
     </head>
     <body id="top" class="site-body">
       <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
@@ -68,7 +70,7 @@
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-label">Tema: Lys</span>
           </button>
-          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp – <span data-price-nok>ca. 122 kr</span></a>
+          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp Jobbklar</a>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -83,6 +85,7 @@
         <p class="eyebrow">Vilkår</p>
         <h1>Vilkår for bruk av Jobbklar</h1>
         <p class="lead">Jobbklar er et digitalt produkt for personlig bruk i egen jobbsøking. Teksten under er en enkel praktisk forklaring, ikke juridisk rådgivning.</p>
+        <p class="article-meta">Oppdatert 11. juli 2026</p>
         <h2>Digitalt produkt</h2>
         <p>Produktet leveres digitalt via Gumroad. Kjøp, betaling, kvittering og nedlasting håndteres av Gumroad.</p>
         <h2>Personlig bruk</h2>
@@ -107,19 +110,20 @@
           <nav aria-label="Footer">
             <a href="../ressurser/">Ressurser</a>
             <a href="../cv-mal-norsk/">CV-mal norsk</a>
-            <a href="../cv-uten-erfaring/">CV uten erfaring</a>
-            <a href="../soknadsmal-deltidsjobb/">Søknadsmal deltidsjobb</a>
+            <a href="../jobbsoknad-mal/">Jobbsøknad-mal</a>
+            <a href="../jobbintervju-sporsmal-svar/">Jobbintervju</a>
+            <a href="../jobbsokerlogg/">Oppfølging og logg</a>
             <a href="../om/">Om Jobbklar</a>
             <a href="../personvern/">Personvern</a>
             <a href="../vilkar/">Vilkår</a>
           </nav>
           <div>
             <p class="footer-heading">Kjøp</p>
-            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar</a>
             <p class="fineprint">Estimert norsk pris inkl. 25 % mva. Kjøp, betaling og digital levering håndteres av Gumroad.</p>
           </div>
         </div>
       </footer>
-      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar</a>
     </body>
     </html>

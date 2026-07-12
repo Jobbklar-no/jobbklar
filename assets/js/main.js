@@ -3,6 +3,11 @@
   var menuButton = document.querySelector(".menu-toggle");
   var themeButton = document.querySelector(".theme-toggle");
   var themeLabel = document.querySelector(".theme-label");
+  var mobileCta = document.querySelector(".mobile-cta");
+  var hero = document.querySelector(".hero");
+  var footer = document.querySelector(".site-footer");
+  var priceSection = document.getElementById("pris");
+  var finalCta = document.querySelector(".final-cta");
   var themeKey = "jobbklar-theme";
   var rateKey = "jobbklar-usd-nok-v1";
   var usdPriceIncludingVat = 12.5;
@@ -23,13 +28,22 @@
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") setMenu(false);
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        setMenu(false);
+        menuButton.focus();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) setMenu(false);
     });
   }
 
   function currentTheme() {
     try {
-      return localStorage.getItem(themeKey) === "dark" ? "dark" : "light";
+      var stored = localStorage.getItem(themeKey);
+      if (stored === "dark" || stored === "light") return stored;
+      return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
     } catch (error) {
       return "light";
     }
@@ -60,7 +74,7 @@
   function updatePrice(rate, sourceDate) {
     if (!Number.isFinite(rate) || rate < 5 || rate > 20) return;
     var nok = Math.round(usdPriceIncludingVat * rate);
-    var formattedPrice = "ca. " + new Intl.NumberFormat("nb-NO", { maximumFractionDigits: 0 }).format(nok) + " kr";
+    var formattedPrice = "Estimert " + new Intl.NumberFormat("nb-NO", { maximumFractionDigits: 0 }).format(nok) + " kr";
     document.querySelectorAll("[data-price-nok]").forEach(function (element) {
       element.textContent = formattedPrice;
     });
@@ -82,7 +96,14 @@
     return null;
   }
 
-  var today = new Date().toISOString().slice(0, 10);
+  function localCalendarDate(date) {
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+    return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate());
+  }
+
+  var today = localCalendarDate(new Date());
   var cachedRate = readCachedRate();
   if (cachedRate) updatePrice(cachedRate.rate, cachedRate.sourceDate);
 
@@ -106,5 +127,44 @@
           if (!cachedRate) element.textContent = "NOK-prisen er et estimat. Endelig beløp vises hos Gumroad før betaling.";
         });
       });
+  }
+
+  function setMobileCta(show) {
+    if (!mobileCta) return;
+    mobileCta.classList.toggle("is-visible", show);
+    mobileCta.setAttribute("aria-hidden", String(!show));
+    mobileCta.tabIndex = show ? 0 : -1;
+    document.body.classList.toggle("has-mobile-cta", show);
+  }
+
+  function updateMobileCta() {
+    if (!mobileCta || window.innerWidth > 760) {
+      setMobileCta(false);
+      return;
+    }
+    var heroPassed = hero ? hero.getBoundingClientRect().bottom < 96 : window.scrollY > 360;
+    var footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
+    var priceRect = priceSection ? priceSection.getBoundingClientRect() : null;
+    var finalRect = finalCta ? finalCta.getBoundingClientRect() : null;
+    var conversionSectionVisible =
+      (priceRect && priceRect.top < window.innerHeight && priceRect.bottom > 0) ||
+      (finalRect && finalRect.top < window.innerHeight && finalRect.bottom > 0);
+    setMobileCta(heroPassed && !footerVisible && !conversionSectionVisible);
+  }
+
+  if (mobileCta) {
+    var mobileCtaTicking = false;
+    function requestMobileCtaUpdate() {
+      if (mobileCtaTicking) return;
+      mobileCtaTicking = true;
+      window.requestAnimationFrame(function () {
+        updateMobileCta();
+        mobileCtaTicking = false;
+      });
+    }
+    setMobileCta(false);
+    updateMobileCta();
+    window.addEventListener("scroll", requestMobileCtaUpdate, { passive: true });
+    window.addEventListener("resize", requestMobileCtaUpdate);
   }
 })();

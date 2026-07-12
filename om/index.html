@@ -7,22 +7,23 @@
       <meta name="description" content="Les hva Jobbklar er, hvem produktpakken er laget for, og hvilke prinsipper innholdet bygger på.">
       <meta name="robots" content="index,follow">
       <meta name="google-site-verification" content="R1_WUzX7GfYl9SxyUrJ1v8RO_Ur5ujNK93sPufMd3G0">
-      <link rel="canonical" href="https://jobbklar-no.github.io/om/">
-      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/om/">
+      <link rel="canonical" href="https://jobbklar-no.github.io/jobbklar/om/">
+      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/jobbklar/om/">
       <meta property="og:locale" content="nb_NO">
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Jobbklar">
       <meta property="og:title" content="Om Jobbklar – norsk jobbsøkerpakke">
       <meta property="og:description" content="Les hva Jobbklar er, hvem produktpakken er laget for, og hvilke prinsipper innholdet bygger på.">
-      <meta property="og:url" content="https://jobbklar-no.github.io/om/">
-      <meta property="og:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta property="og:url" content="https://jobbklar-no.github.io/jobbklar/om/">
+      <meta property="og:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Jobbklar produktpakke med CV-maler, søknadsmaler og intervjuguide">
+
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="Om Jobbklar – norsk jobbsøkerpakke">
       <meta name="twitter:description" content="Les hva Jobbklar er, hvem produktpakken er laget for, og hvilke prinsipper innholdet bygger på.">
-      <meta name="twitter:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta name="twitter:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
       <meta name="theme-color" content="#17283D" media="(prefers-color-scheme: dark)">
       <script>
@@ -30,7 +31,8 @@
           var key = "jobbklar-theme";
           var choice = "light";
           try {
-            choice = localStorage.getItem(key) || "light";
+            choice = localStorage.getItem(key) ||
+              (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
           } catch (error) {}
           choice = choice === "dark" ? "dark" : "light";
           document.documentElement.dataset.theme = choice;
@@ -38,13 +40,13 @@
           document.documentElement.classList.add("js");
         })();
       </script>
-      <link rel="preload" href="../assets/img/jobbklar-cover.webp" as="image" type="image/webp" fetchpriority="high">
+
       <link rel="stylesheet" href="../assets/css/styles.css">
       <link rel="icon" href="../favicon.svg" type="image/svg+xml">
       <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
       <link rel="manifest" href="../site.webmanifest">
       <script defer src="../assets/js/main.js"></script>
-      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Om Jobbklar – norsk jobbsøkerpakke","description":"Les hva Jobbklar er, hvem produktpakken er laget for, og hvilke prinsipper innholdet bygger på.","url":"https://jobbklar-no.github.io/om/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/"},{"@type":"ListItem","position":2,"name":"Om Jobbklar","item":"https://jobbklar-no.github.io/om/"}]}]</script>
+      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Om Jobbklar – norsk jobbsøkerpakke","description":"Les hva Jobbklar er, hvem produktpakken er laget for, og hvilke prinsipper innholdet bygger på.","url":"https://jobbklar-no.github.io/jobbklar/om/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/jobbklar/"},{"@type":"ListItem","position":2,"name":"Om Jobbklar","item":"https://jobbklar-no.github.io/jobbklar/om/"}]}]</script>
     </head>
     <body id="top" class="site-body">
       <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
@@ -68,7 +70,7 @@
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-label">Tema: Lys</span>
           </button>
-          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp – <span data-price-nok>ca. 122 kr</span></a>
+          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp Jobbklar</a>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -83,12 +85,16 @@
             <p class="eyebrow">Om</p>
             <h1>Om Jobbklar</h1>
             <p class="lead">Jobbklar er en digital produktpakke for norske jobbsøkere som vil gjøre arbeidet med CV, søknad, intervju og oppfølging mer oversiktlig.</p>
+            <p class="article-meta">Oppdatert 11. juli 2026</p>
             <h2>Hvem pakken er laget for</h2>
             <p>Pakken er særlig laget for studenter, elever, nyutdannede og personer med lite arbeidserfaring. Den passer også for søkere som vil ha mer struktur i jobbsøkingen eller trenger redigerbare utgangspunkt.</p>
             <h2>Prinsippene bak innholdet</h2>
             <p>Innholdet bygger på naturlig norsk språk, ærlig fremstilling av erfaring og praktiske eksempler. Målet er ikke å lage en ferdig fasit, men å gi deg en bedre arbeidsmåte.</p>
             <p>Jobbklar lover ikke jobb, intervju eller svar. Produktet hjelper deg å skrive mer konkret, forberede egne eksempler og kontrollere dokumentene før sending.</p>
-            <div class="article-cta"><a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=about">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a></div>
+            <h2>Avsender, betaling og levering</h2>
+            <p>Jobbklar er produktnavnet. Kjøp og digital levering skjer hos Gumroad, der selgeren er oppført som Mats Hannisdal. Gumroad viser endelig pris før betaling og gir tilgang til nedlastingen etter kjøpet.</p>
+            <p>Spørsmål om betaling eller nedlasting kan følges opp fra kjøpskvitteringen og nedlastingssiden hos Gumroad.</p>
+            <div class="article-cta"><a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=about">Se hele Jobbklar-pakken</a></div>
           </div>
         </article>
 
@@ -105,19 +111,20 @@
           <nav aria-label="Footer">
             <a href="../ressurser/">Ressurser</a>
             <a href="../cv-mal-norsk/">CV-mal norsk</a>
-            <a href="../cv-uten-erfaring/">CV uten erfaring</a>
-            <a href="../soknadsmal-deltidsjobb/">Søknadsmal deltidsjobb</a>
+            <a href="../jobbsoknad-mal/">Jobbsøknad-mal</a>
+            <a href="../jobbintervju-sporsmal-svar/">Jobbintervju</a>
+            <a href="../jobbsokerlogg/">Oppfølging og logg</a>
             <a href="../om/">Om Jobbklar</a>
             <a href="../personvern/">Personvern</a>
             <a href="../vilkar/">Vilkår</a>
           </nav>
           <div>
             <p class="footer-heading">Kjøp</p>
-            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar</a>
             <p class="fineprint">Estimert norsk pris inkl. 25 % mva. Kjøp, betaling og digital levering håndteres av Gumroad.</p>
           </div>
         </div>
       </footer>
-      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar</a>
     </body>
     </html>

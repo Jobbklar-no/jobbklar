@@ -7,22 +7,23 @@
       <meta name="description" content="Se hvilke felt en jobbsøkerlogg bør inneholde, og hvordan du kan følge opp søknader, frister og intervjuer.">
       <meta name="robots" content="index,follow">
       <meta name="google-site-verification" content="R1_WUzX7GfYl9SxyUrJ1v8RO_Ur5ujNK93sPufMd3G0">
-      <link rel="canonical" href="https://jobbklar-no.github.io/jobbsokerlogg/">
-      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/jobbsokerlogg/">
+      <link rel="canonical" href="https://jobbklar-no.github.io/jobbklar/jobbsokerlogg/">
+      <link rel="alternate" hreflang="nb-NO" href="https://jobbklar-no.github.io/jobbklar/jobbsokerlogg/">
       <meta property="og:locale" content="nb_NO">
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="article">
       <meta property="og:site_name" content="Jobbklar">
       <meta property="og:title" content="Jobbsøkerlogg – hold oversikt over søknader i Excel">
       <meta property="og:description" content="Se hvilke felt en jobbsøkerlogg bør inneholde, og hvordan du kan følge opp søknader, frister og intervjuer.">
-      <meta property="og:url" content="https://jobbklar-no.github.io/jobbsokerlogg/">
-      <meta property="og:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta property="og:url" content="https://jobbklar-no.github.io/jobbklar/jobbsokerlogg/">
+      <meta property="og:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Jobbklar produktpakke med CV-maler, søknadsmaler og intervjuguide">
+      <meta property="article:modified_time" content="2026-07-11">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="Jobbsøkerlogg – hold oversikt over søknader i Excel">
       <meta name="twitter:description" content="Se hvilke felt en jobbsøkerlogg bør inneholde, og hvordan du kan følge opp søknader, frister og intervjuer.">
-      <meta name="twitter:image" content="https://jobbklar-no.github.io/assets/img/jobbklar-og.jpg">
+      <meta name="twitter:image" content="https://jobbklar-no.github.io/jobbklar/assets/img/jobbklar-og.jpg">
       <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
       <meta name="theme-color" content="#17283D" media="(prefers-color-scheme: dark)">
       <script>
@@ -30,7 +31,8 @@
           var key = "jobbklar-theme";
           var choice = "light";
           try {
-            choice = localStorage.getItem(key) || "light";
+            choice = localStorage.getItem(key) ||
+              (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
           } catch (error) {}
           choice = choice === "dark" ? "dark" : "light";
           document.documentElement.dataset.theme = choice;
@@ -38,13 +40,13 @@
           document.documentElement.classList.add("js");
         })();
       </script>
-      <link rel="preload" href="../assets/img/jobbklar-cover.webp" as="image" type="image/webp" fetchpriority="high">
+
       <link rel="stylesheet" href="../assets/css/styles.css">
       <link rel="icon" href="../favicon.svg" type="image/svg+xml">
       <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
       <link rel="manifest" href="../site.webmanifest">
       <script defer src="../assets/js/main.js"></script>
-      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Jobbsøkerlogg – hold oversikt over søknader i Excel","description":"Se hvilke felt en jobbsøkerlogg bør inneholde, og hvordan du kan følge opp søknader, frister og intervjuer.","url":"https://jobbklar-no.github.io/jobbsokerlogg/","inLanguage":"nb-NO"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/"},{"@type":"ListItem","position":2,"name":"Ressurser","item":"https://jobbklar-no.github.io/ressurser/"},{"@type":"ListItem","position":3,"name":"Jobbsøkerlogg: få oversikt over søknader, frister og oppfølging","item":"https://jobbklar-no.github.io/jobbsokerlogg/"}]}]</script>
+      <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Jobbsøkerlogg – hold oversikt over søknader i Excel","description":"Se hvilke felt en jobbsøkerlogg bør inneholde, og hvordan du kan følge opp søknader, frister og intervjuer.","url":"https://jobbklar-no.github.io/jobbklar/jobbsokerlogg/","inLanguage":"nb-NO","dateModified":"2026-07-11"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://jobbklar-no.github.io/jobbklar/"},{"@type":"ListItem","position":2,"name":"Ressurser","item":"https://jobbklar-no.github.io/jobbklar/ressurser/"},{"@type":"ListItem","position":3,"name":"Jobbsøkerlogg: få oversikt over søknader, frister og oppfølging","item":"https://jobbklar-no.github.io/jobbklar/jobbsokerlogg/"}]}]</script>
     </head>
     <body id="top" class="site-body">
       <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
@@ -68,7 +70,7 @@
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-label">Tema: Lys</span>
           </button>
-          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp – <span data-price-nok>ca. 122 kr</span></a>
+          <a class="button button-small header-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=nav">Kjøp Jobbklar</a>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -83,11 +85,13 @@
         <p class="eyebrow">Jobbklar ressurs</p>
         <h1>Jobbsøkerlogg: få oversikt over søknader, frister og oppfølging</h1>
         <p class="lead">Når du søker flere jobber samtidig, blir det fort vanskelig å huske hvor du har søkt, hva du sendte, og når du bør følge opp. En jobbsøkerlogg gjør prosessen mer ryddig.</p>
+        <p class="article-meta">Oppdatert 11. juli 2026 · Omtrent 3 min lesetid</p>
+        <nav class="article-toc" aria-label="Innhold på siden"><p>På denne siden</p><ol><li><a href="#hvorfor-en-logg-er-nyttig">Hvorfor en logg er nyttig</a></li><li><a href="#felt-som-bor-registreres">Felt som bør registreres</a></li><li><a href="#status-og-neste-steg">Status og neste steg</a></li><li><a href="#oppfolging">Oppfølging</a></li><li><a href="#hvordan-jobbklar-loggen-fungerer">Hvordan Jobbklar-loggen fungerer</a></li></ol></nav>
 
-        <h2>Hvorfor en logg er nyttig</h2>
+        <h2 id="hvorfor-en-logg-er-nyttig">Hvorfor en logg er nyttig</h2>
         <p>Jobbsøking består av mange små steg: finne stilling, tilpasse CV, skrive søknad, sende, vente, følge opp, forberede intervju og registrere svar. Uten system blir det lett å miste frister eller sende nesten samme tekst til ulike arbeidsgivere.</p>
         <p>En logg gjør det også enklere å lære. Du kan se hvilke typer stillinger du søker, hvor du får svar, og om du bør justere CV eller søknad.</p>
-        <h2>Felt som bør registreres</h2>
+        <h2 id="felt-som-bor-registreres">Felt som bør registreres</h2>
         <ul>
           <li>Arbeidsgiver og stillingstittel.</li>
           <li>Lenke til stillingsannonse.</li>
@@ -99,19 +103,20 @@
           <li>Intervjudato og notater.</li>
           <li>Svar og læringspunkt.</li>
         </ul>
-        <h2>Status og neste steg</h2>
+        <h2 id="status-og-neste-steg">Status og neste steg</h2>
         <p>Statusfeltet bør være enkelt. For mange kategorier gjør loggen tung å bruke. Det viktigste er at du raskt ser hvilke søknader som venter, hvilke som trenger oppfølging, og hvilke som er ferdige.</p>
         <p>Neste steg kan være «tilpass CV», «send søknad», «følg opp mandag», «forbered intervju» eller «registrer avslag». Slik blir loggen en arbeidsliste, ikke bare et arkiv.</p>
-        <h2>Oppfølging</h2>
+        <h2 id="oppfolging">Oppfølging</h2>
         <p>Ikke alle søknader skal følges opp, men der det passer kan du notere dato og kort melding. Det hjelper deg å unngå både å glemme oppfølging og å purre for tidlig.</p>
-        <h2>Hvordan Jobbklar-loggen fungerer</h2>
+        <h2 id="hvordan-jobbklar-loggen-fungerer">Hvordan Jobbklar-loggen fungerer</h2>
         <p>Jobbklar inneholder en jobbsøkerlogg i Excel. Den er laget for å samle oversikt over søknader, frister, status og oppfølging. Den passer godt sammen med sjekklistene, intervjuforberedelsen og e-postmalene i pakken.</p>
         <p>Etter at du har registrert en intervjudato, kan du bruke siden om <a href="../jobbintervju-sporsmal-svar/">jobbintervju spørsmål og svar</a> til å forberede egne eksempler.</p>
 
+        <p class="resource-backlink"><a href="../ressurser/">Se alle jobbsøkerressurser</a></p>
         <div class="article-cta">
           <h2>Vil du ha maler og sjekklister samlet?</h2>
           <p>Jobbklar samler CV-maler, søknadsmaler, intervjuguide, promptbank, sjekklister og jobbsøkerlogg i én digital produktpakke.</p>
-          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=resource_log">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+          <a class="button" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=resource_log">Se malene og verktøyene i Jobbklar</a>
         </div>
       </div>
     </article>
@@ -129,19 +134,20 @@
           <nav aria-label="Footer">
             <a href="../ressurser/">Ressurser</a>
             <a href="../cv-mal-norsk/">CV-mal norsk</a>
-            <a href="../cv-uten-erfaring/">CV uten erfaring</a>
-            <a href="../soknadsmal-deltidsjobb/">Søknadsmal deltidsjobb</a>
+            <a href="../jobbsoknad-mal/">Jobbsøknad-mal</a>
+            <a href="../jobbintervju-sporsmal-svar/">Jobbintervju</a>
+            <a href="../jobbsokerlogg/">Oppfølging og logg</a>
             <a href="../om/">Om Jobbklar</a>
             <a href="../personvern/">Personvern</a>
             <a href="../vilkar/">Vilkår</a>
           </nav>
           <div>
             <p class="footer-heading">Kjøp</p>
-            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+            <a class="button button-secondary" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=footer">Kjøp Jobbklar</a>
             <p class="fineprint">Estimert norsk pris inkl. 25 % mva. Kjøp, betaling og digital levering håndteres av Gumroad.</p>
           </div>
         </div>
       </footer>
-      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar – <span data-price-nok>ca. 122 kr</span></a>
+      <a class="mobile-cta" href="https://matspark8.gumroad.com/l/Jobbklar?utm_source=jobbklar_site&utm_medium=website&utm_campaign=organic&utm_content=mobile">Kjøp Jobbklar</a>
     </body>
     </html>
